@@ -58,22 +58,11 @@ a:hover{
     transform: scale(0.9);
 
 }
-@media (min-width: 480px) and (max-width: 768px) {
+@media screen and (max-widht:768px){
     .main__title{
         font-size: 40px;
     }
-    .main__subtitle, 
-    .main__link{
+    .main__subtitle, .main__link{
         font-size: 26px;
     }
 } 
-
-@media (max-width: 480px) {
-    .main__title{
-        font-size: 30px;
-    }
-    .main__subtitle, 
-    .main__link{
-        font-size: 20px;
-    }
-}
