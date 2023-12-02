@@ -1,3 +1,9 @@
+:root{
+    --color-light: #ffc163;
+    --color-dark: #211e1c; 
+    --color-middel: #413d3b; 
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -6,6 +12,7 @@
 body{
     margin: 0;
     font-family: Helvetica, sans-serif;
+    color: var(--color-dark);
 }
 
 a{
@@ -16,7 +23,18 @@ a:hover{
     text-decoration: none;
 }
 
-.conainer{
+body::-webkit-scrollbar {
+    width: 8px;               /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+    background: var(--color-dark);        /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-light);    /* цвет плашки */
+    border-radius: 8px;       /* закругления плашки */
+}
+
+.container{
     width: 90%;
     margin: 0 auto;
 }
@@ -48,22 +66,121 @@ a:hover{
 .main__link{
     text-align: center;
     font-size: 36px;
-    color: #fcaf3b;
+    color: var(--color-light);
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-block;
 }
 .main__link:hover{
-    color: #fdb74d;
+    color: var(--color-light);
     transform: scale(0.9);
 
 }
+.title{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.info__title{
+    margin-bottom: 60px;
+}
+.info__wrapper{
+    padding: 60px 0px;
+}
+.info__steps{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.step{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+.step__number{
+    min-width: 50px;
+    min-height: 50px;
+    background: var(--color-light);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    border-radius: 100%;
+}
+.step__descr{
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.info__steps{
+    margin-bottom: 60px;
+}
+.info__descr{
+    font-size: 18px;
+    line-height: 26px;
+    max-width: 760px;
+}
+
+.marks__wrapper{
+    padding: 60px 0px;
+    background: var(--color-middel);
+    color: #fff;
+}
+.marks__title{
+    margin-bottom: 60px;
+}
+.marks__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px
+}
+.marks__item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    font-size: 20px;
+}
+.marks__icon img{
+    max-width: 30px;
+}
+.marks__content{
+    display: flex;
+}
+.footer__wrapper{
+    padding: 30px 0px; 
+}
+.footer{
+    background: var(--color-dark);
+    color: #fff;
+}
+@media (max-width: 1200px) {
+    .info__steps{
+        flex-wrap: wrap;
+    }
+    .step{
+        flex-grow: 1;
+        flex-basis: 45%;
+    }
+} 
 @media (min-width: 480px) and (max-width: 768px) {
     .main__title{
         font-size: 40px;
     }
     .main__subtitle, 
     .main__link{
+        font-size: 26px;
+    }
+    .info__steps{
+        gap: 30px;
+    }
+    .title{
         font-size: 26px;
     }
 } 
@@ -75,5 +192,37 @@ a:hover{
     .main__subtitle, 
     .main__link{
         font-size: 20px;
+    }
+    .main__wrapper{
+        height: 60vh;
+    }
+    .title{
+        font-size: 24px;
+    }
+    .info__wrapper,
+    .marks__wrapper{
+        padding: 30px 0px;
+    }
+    .info__steps,
+    .info__title,
+    .marks__title {
+        margin-bottom: 30px;
+    }
+    .info__steps{
+        gap: 30px;
+    }
+    .step__number{
+        min-width: 40px;
+        min-height: 40px;
+    }
+    .step{
+        width: 100%;
+        flex-basis: 100%;
+    }
+    .marks__list {
+        gap: 20px;
+    }
+    .marks__item{
+        font-size: 18px;
     }
 }
